@@ -1,0 +1,145 @@
+/****************
+GENERAL
+****************/
+
+html {
+    font-size: 23px;
+    background: url("../img/bg.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+header {
+    margin: 50px auto;
+    margin-bottom: 60px;
+}
+
+body {
+    color: #F0EEE3;
+}
+
+body a, body a:visited {
+    color: #4C566A;
+}
+
+body a:hover {
+    color: #8FBCBB;
+}
+
+.main ul {
+    background-color: #F0EEE3;
+}
+
+.main li {
+    overflow-wrap: break-word;
+}
+
+
+/****************
+TIME & DATE
+****************/
+
+time {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: 300;
+}
+
+.date {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.em;
+    text-align: center;
+    font-weight: 300;
+}
+
+.city {
+  display: block;
+  text-align: center;
+  font-weight: 300;
+}
+
+
+/****************
+LISTS
+****************/
+
+.main h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.main a {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.main ul {
+    margin: 0;
+    padding: .125em 0;
+    text-align: center;
+    list-style: none;
+}
+
+.main section {
+    display: inline-block;
+    float: left;
+    margin: 20px 15%;
+    width: 70%;
+}
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.personal h3 {
+    background-color: #81A1C1;
+}
+
+.personal a:hover {
+    color: #81A1C1;
+}
+
+.i-systems h3 {
+    background-color: #8FBCBB;
+}
+
+.i-systems a:hover {
+    color: #8FBCBB;
+}
+
+.e-systems h3 {
+    background-color: #A3BE8C;
+}
+
+.e-systems a:hover {
+    color: #A3BE8C;
+}
+
+.planning h3 {
+    background-color: #D08770;
+}
+
+.planning a:hover {
+    color: #D08770;
+}
+
+.reference h3 {
+    background-color: #BfB1D5;
+}
+
+.reference a:hover {
+    color: #BFB1D5;
+}
+
+/*Temporary solid line (will replace with two sections)*/
+li.section-end {
+    border-bottom: 1px solid black;
+}

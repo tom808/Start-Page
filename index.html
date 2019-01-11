@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="clock_holder">
+            <span class="city">Nottingham (GMT)</span>
+            <time id="js-clock-notts"></time>
+            <span id="js-date-notts" class="date"></span>
+        </div>
+    </header>
+    <div class="wrapper">
+        <section class="main">
+            <section class="personal">
+                <h3>Personal</h3>
+                <ul>
+                    <li><a href="https://mail.google.com/mail/u/0/">Gmail</li>
+                    <li><a href="https://calendar.google.com/calendar/r?tab=mc">Calendar</a></li>
+                </ul>
+            </section>
+            <section class="planning">
+                <h3>Planning</h3>
+                <ul>
+                    <li><a href="https://trello.com/b/2Uh7hAMF/daily-what-do">What Do (Trello)</a></li>
+                </ul>
+            </section>
+            <section class="e-systems">
+                <h3>Systems</h3>
+                <ul>
+                  <li><a href="#">Item</a></li>
+                </ul>
+            </section>
+            <section class="reference">
+                <h3>Reference</h3>
+                <ul>
+                    <li><a href="https://developer.android.com/reference/">Android API Reference</a></li
+                    <li><a href="https://ert.udemy.com/">Udemy</a></li>
+            </section>
+            <footer>
+            </footer>
+    </div>
+    <script>
+    function ordinal_suffix_of(i) {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
+    }
+
+    class Clock {
+        constructor(dateObj, timeEl, dateEl) {
+            this._date = dateObj;
+            this._clockEl = document.getElementById(timeEl);
+            this._dateEl = document.getElementById(dateEl);
+            this._setTime = this._setTime.bind(this);
+            this._start();
+        }
+
+        _pad(num) {
+            return (`0${num.toString()}`).slice(-2);
+        }
+
+        _setTime() {
+            const hours = this._pad(this._date.getHours());
+            const minutes = this._pad(this._date.getMinutes());
+            this._clockEl.innerHTML = `${hours} : ${minutes}`;
+            const year = this._date.getFullYear();
+            const month = this._pad(this._date.getMonth());
+            const day = this._date.getDate();
+            var weekdays = new Array(7);
+            weekdays[0] = "Sunday";
+            weekdays[1] = "Monday";
+            weekdays[2] = "Tuesday";
+            weekdays[3] = "Wednesday";
+            weekdays[4] = "Thursday";
+            weekdays[5] = "Friday";
+            weekdays[6] = "Saturday";
+            var months = new Array(12);
+            months['00'] = "January";
+            months['01'] = "February";
+            months['02'] = "March";
+            months['03'] = "April";
+            months['04'] = "May";
+            months['05'] = "June";
+            months['06'] = "July";
+            months['07'] = "August";
+            months['08'] = "September";
+            months['09'] = "October";
+            months['10'] = "November";
+            months['11'] = "December";
+            var weekday = weekdays[this._date.getDay()];
+            var fullMonth = months[month];
+            this._dateEl.innerHTML = weekday + ', ' + ordinal_suffix_of(day) + ' ' + fullMonth + ' ' + year;
+        }
+
+        _start() {
+            this._setTime();
+            setInterval(this._setTime, 3000);
+        }
+    }
+    const notts_clock = new Clock(new Date(), 'js-clock-notts', 'js-date-notts');
+    </script>
+</body>
+
+</html>

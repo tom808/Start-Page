@@ -1,0 +1,32 @@
+/* small window */
+@media screen and (min-width: 480px) {
+  .main section {
+    margin: 20px 2.5%;
+    width: 28.3333%;
+  }
+
+}
+
+/* desktop */
+@media screen and (min-width: 660px) {
+
+  .clock_holder {
+    display: inline-block;
+    color: #493a35;
+    width: 100%;
+  }
+
+  .main section {
+    margin: 15px 2.5%;
+    width: 20%;
+  }
+
+  .main {
+    margin: inherit 10%;
+  }
+
+  .main section:nth-child(6n) {
+    clear: left;
+  }
+
+}
